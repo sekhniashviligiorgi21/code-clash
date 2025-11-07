@@ -6,6 +6,7 @@ import requests
 from fastapi.staticfiles import StaticFiles
 import random
 import google.generativeai as genai
+from fastapi.responses import FileResponse
 
 easy_challenges = [
     # 🟢 EASY
@@ -489,5 +490,4 @@ async def writing_hard_code(request: Request):
 
     return {"AI's code": hard_code}
 
-
-app.mount("/", StaticFiles(directory="frontend", html=True), name="frontend")
+app.mount("/frontend", StaticFiles(directory="frontend", html=True), name="frontend")
