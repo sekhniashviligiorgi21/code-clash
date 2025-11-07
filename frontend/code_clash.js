@@ -59,7 +59,7 @@ async function level(level){
     document.getElementById("medium").style.display="none"
     document.getElementById("hard").style.display="none"
     const response = await
-    fetch(`http://127.0.0.1:8000/singleplayer/${level}`);
+    fetch(`https://code-clash-oo71.onrender.com/singleplayer/${level}`);
     const challenge = await response.json()
     document.getElementById("challenge").innerHTML=`
         <h2>${challenge.title}</h2>
@@ -70,7 +70,7 @@ async function level(level){
         document.getElementById("submit").disabled = true;
         document.getElementById("submit").textContent="Analyzing code...";
         const code=editor.getValue()
-        const res = await fetch("http://127.0.0.1:8000/analyzing-code",{
+        const res = await fetch("https://code-clash-oo71.onrender.com/analyzing-code",{
             method:"POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({code: code, challenge_title: challenge.title})
@@ -155,7 +155,7 @@ async function vsAI(lvl){
     document.getElementById("medium").style.display="none"
     document.getElementById("hard").style.display="none"
     const response = await
-    fetch(`http://127.0.0.1:8000/vsAI/${lvl}`);
+    fetch(`https://code-clash-oo71.onrender.com/vsAI/${lvl}`);
     const challenge = await response.json();
     document.getElementById("challenge").innerHTML=`
         <h2>${challenge.title}</h2>
