@@ -179,7 +179,7 @@ async function vsAI(lvl){
         `;
         document.getElementById("submit").textContent="AI code loading...";
         const aiRes = await
-        fetch(`http://127.0.0.1:8000/writing-${lvl}-code`,{
+        fetch(`https://code-clash-oo71.onrender.com/writing-${lvl}-code`,{
             method:"POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({code: userCode, challenge_title: challenge.title})
