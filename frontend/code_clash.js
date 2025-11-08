@@ -166,7 +166,7 @@ async function vsAI(lvl){
         document.getElementById("submit").disabled = true;
         document.getElementById("submit").textContent="Analyzing code...";
         const userCode=editor.getValue()
-        const res = await fetch("http://127.0.0.1:8000/analyzing-code",{
+        const res = await fetch("https://code-clash-oo71.onrender.com/analyzing-code",{
             method:"POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({code: userCode, challenge_title: challenge.title})
